@@ -1,0 +1,94 @@
+* {
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background-color: #000;
+	color: #fff;
+}
+
+.video-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.video-container video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center center;
+	display: block;
+}
+
+.logo-mclaren {
+	font-weight: 800;
+	letter-spacing: 0.38em;
+	text-transform: uppercase;
+}
+
+.nav-item {
+	position: relative;
+	padding-bottom: 6px;
+	cursor: pointer;
+	transition: color 0.2s ease;
+}
+
+.nav-item::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0%;
+	height: 2px;
+	background-color: #ffffff;
+	transition: width 0.3s ease-in-out;
+}
+
+.nav-item-container:hover .nav-item::after {
+	width: 100%;
+}
+
+.nav-item-container .chevron-icon {
+	transition: transform 0.3s ease;
+}
+
+.nav-item-container:hover .chevron-icon {
+	transform: rotate(180deg);
+}
+
+.dropdown-menu {
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(-8px);
+	transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+	pointer-events: none;
+}
+
+.nav-item-container:hover .dropdown-menu {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+	pointer-events: auto;
+}
+
+.btn-mclaren {
+	transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-mclaren:hover {
+	background-color: #e5e5e5;
+	color: #000;
+	transform: translateY(-2px);
+	box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
+}

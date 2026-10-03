@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McLaren - Bem-vindo ao Mundo da McLaren</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="mslarem.css">
+</head>
+<body class="relative w-screen h-screen overflow-hidden select-none bg-black">
+
+    <div class="video-container">
+        <video 
+            id="bgVideo" 
+            autoplay 
+            loop 
+            muted 
+            playsinline 
+            preload="auto"
+        >
+            <source src="https://cms-assets-production.mclaren.com/7000/COMBINED-WEB-ALT-2.7K.mp4" type="video/mp4">
+            Seu navegador não suporta a exibição de vídeos em HTML5.
+        </video>
+        
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/85 pointer-events-none"></div>
+    </div>
+
+    <header class="relative z-20 w-full pt-6 pb-4 px-6 md:px-12 flex flex-col items-center">
+        <div class="mb-5 cursor-pointer text-center" onclick="showToast('McLaren Official Portal')">
+            <h1 class="logo-mclaren text-2xl md:text-3xl text-white font-extrabold tracking-[0.38em]">
+                McLAREN
+            </h1>
+        </div>
+
+        <nav class="flex flex-wrap justify-center items-center gap-6 md:gap-10 text-xs md:text-sm font-medium tracking-wider text-white/90">
+            
+            <div class="nav-item-container relative py-2">
+                <a href="javascript:void(0)" class="nav-item inline-flex items-center gap-1.5 hover:text-white">
+                    <span>Automotivo</span>
+                    <i class="chevron-icon fa-solid fa-chevron-up text-[10px]"></i>
+                </a>
+                
+                <div class="dropdown-menu absolute top-full left-0 min-w-[170px] bg-white text-black shadow-2xl py-2 z-30 rounded-sm">
+                    <a href="javascript:void(0)" onclick="showToast('Ação: Automotivo')" class="block px-5 py-2.5 text-xs font-semibold hover:bg-gray-100 text-gray-800 border-b border-gray-100">
+                        Automotivo
+                    </a>
+                    <a href="javascript:void(0)" onclick="showToast('Ação: McLaren W1')" class="block px-5 py-2.5 text-xs font-semibold hover:bg-gray-100 text-gray-800">
+                        McLaren W1
+                    </a>
+                </div>
+            </div>
+
+            <div class="nav-item-container relative py-2">
+                <a href="javascript:void(0)" class="nav-item inline-flex items-center gap-1.5 hover:text-white">
+                    <span>Corrida</span>
+                    <i class="chevron-icon fa-solid fa-chevron-down text-[10px]"></i>
+                </a>
+
+                <div class="dropdown-menu absolute top-full left-0 min-w-[170px] bg-white text-black shadow-2xl py-2 z-30 rounded-sm">
+                    <a href="javascript:void(0)" onclick="showToast('Ação: Fórmula 1')" class="block px-5 py-2.5 text-xs font-semibold hover:bg-gray-100 text-gray-800">
+                        Fórmula 1
+                    </a>
+                    <a href="javascript:void(0)" onclick="showToast('Ação: IndyCar')" class="block px-5 py-2.5 text-xs font-semibold hover:bg-gray-100 text-gray-800">
+                        IndyCar
+                    </a>
+                    <a href="javascript:void(0)" onclick="showToast('Ação: Endurance')" class="block px-5 py-2.5 text-xs font-semibold hover:bg-gray-100 text-gray-800">
+                        Endurance
+                    </a>
+                </div>
+            </div>
+
+            <div class="nav-item-container relative py-2">
+                <a href="javascript:void(0)" onclick="showToast('Ação: Golfe')" class="nav-item hover:text-white">
+                    Golfe
+                </a>
+            </div>
+
+            <div class="nav-item-container relative py-2">
+                <a href="javascript:void(0)" onclick="showToast('Ação: Corporativo')" class="nav-item hover:text-white">
+                    Corporativo
+                </a>
+            </div>
+
+            <div class="nav-item-container relative py-2">
+                <a href="javascript:void(0)" class="nav-item inline-flex items-center gap-1.5 hover:text-white">
+                    <span>Carreiras</span>
+                    <i class="chevron-icon fa-solid fa-chevron-down text-[10px]"></i>
+                </a>
+
+                <div class="dropdown-menu absolute top-full left-0 min-w-[180px] bg-white text-black shadow-2xl py-2 z-30 rounded-sm">
+                    <a href="javascript:void(0)" onclick="showToast('Ação: Vagas Abertas')" class="block px-5 py-2.5 text-xs font-semibold hover:bg-gray-100 text-gray-800">
+                        Vagas Abertas
+                    </a>
+                    <a href="javascript:void(0)" onclick="showToast('Ação: Programa de Estágio')" class="block px-5 py-2.5 text-xs font-semibold hover:bg-gray-100 text-gray-800">
+                        Programa de Estágio
+                    </a>
+                </div>
+            </div>
+
+            <div class="nav-item-container relative py-2">
+                <a href="javascript:void(0)" onclick="showToast('Ação: Loja')" class="nav-item hover:text-white">
+                    Loja
+                </a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main class="absolute bottom-12 left-6 md:left-16 z-20 max-w-xl md:max-w-2xl pr-6">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-wide uppercase leading-tight mb-8 drop-shadow-lg">
+            BEM-VINDO AO MUNDO DA McLAREN
+        </h2>
+
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <button 
+                onclick="showToast('Visite a Seção Automotiva')" 
+                class="btn-mclaren bg-white text-black text-xs md:text-sm font-bold uppercase tracking-wider py-4 px-6 text-center cursor-pointer border border-white"
+            >
+                VISITE A SEÇÃO AUTOMOTIVA
+            </button>
+            <button 
+                onclick="showToast('Visite as Corridas')" 
+                class="btn-mclaren bg-white text-black text-xs md:text-sm font-bold uppercase tracking-wider py-4 px-6 text-center cursor-pointer border border-white"
+            >
+                VISITE AS CORRIDAS
+            </button>
+        </div>
+    </main>
+
+    <button 
+        onclick="showToast('Preferências de cookies')" 
+        title="Preferências de Cookies"
+        class="fixed bottom-6 left-6 z-30 w-11 h-11 rounded-full bg-[#1e4d3f] hover:bg-[#256150] text-white flex items-center justify-center shadow-lg transition-transform hover:scale-110 active:scale-95 cursor-pointer border border-emerald-400/30"
+    >
+        <i class="fa-solid fa-cookie-bite text-lg"></i>
+    </button>
+
+    <button 
+        id="videoToggleBtn"
+        onclick="toggleVideoPlayback()" 
+        title="Pausar / Reproduzir Vídeo"
+        class="fixed bottom-6 right-6 z-30 w-12 h-10 bg-white/20 hover:bg-white/35 backdrop-blur-md text-white flex items-center justify-center transition-all active:scale-95 cursor-pointer border border-white/30"
+    >
+        <span id="videoIcon" class="text-sm font-bold tracking-tighter">||</span>
+    </button>
+
+    <div 
+        id="toast" 
+        class="fixed top-24 left-1/2 -translate-x-1/2 z-50 bg-white/95 text-black px-6 py-3 rounded-full shadow-2xl font-semibold text-xs tracking-wider uppercase opacity-0 pointer-events-none transform -translate-y-4 transition-all duration-300 border border-gray-200"
+    >
+        <span id="toastMessage">Ação</span>
+    </div>
+
+    <script>
+        const video = document.getElementById('bgVideo');
+        const videoToggleBtn = document.getElementById('videoToggleBtn');
+        const videoIcon = document.getElementById('videoIcon');
+        const toast = document.getElementById('toast');
+        const toastMessage = document.getElementById('toastMessage');
+        let toastTimeout = null;
+
+        if (video) {
+            video.addEventListener('ended', function() {
+                video.currentTime = 0;
+                video.play().catch(() => {});
+            });
+        }
+
+        async function toggleVideoPlayback() {
+            if (!video) return;
+
+            if (video.paused) {
+                try {
+                    await video.play();
+                    videoIcon.textContent = "||";
+                    showToast("Vídeo em reprodução contínua");
+                } catch (err) {
+                    if (err.name !== 'AbortError') {
+                        console.warn("Erro ao iniciar vídeo:", err);
+                    }
+                }
+            } else {
+                try {
+                    video.pause();
+                    videoIcon.textContent = "▶";
+                    showToast("Vídeo pausado");
+                } catch (err) {
+                    console.warn("Erro ao pausar vídeo:", err);
+                }
+            }
+        }
+
+        function showToast(message) {
+            toastMessage.textContent = message;
+            toast.classList.remove('opacity-0', 'pointer-events-none', '-translate-y-4');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            if (toastTimeout) {
+                clearTimeout(toastTimeout);
+            }
+
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'pointer-events-none', '-translate-y-4');
+            }, 2200);
+        }
+
+        window.addEventListener('load', () => {
+            if (video) {
+                video.play().then(() => {
+                    videoIcon.textContent = "||";
+                }).catch(() => {
+                    videoIcon.textContent = "▶";
+                });
+            }
+        });
+    </script>
+</body>
+</html>
